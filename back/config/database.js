@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // database.js
 
 
@@ -36,3 +37,14 @@ module.exports = databaseConfig;
 // };
 
 // module.exports = databaseConfig;
+=======
+const databaseConfig = {
+  host: '127.0.0.1',
+  port: 3306,
+  user: 'root',
+  password: '',
+  database: 'se',
+}
+
+module.exports = databaseConfig
+>>>>>>> devall

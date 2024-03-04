@@ -6,7 +6,7 @@ export default function Login() {
     const { login } = useContext(AuthContext)
 
     const handleSubmit = (values) => {
-        if (values.carne = '1-2' && values.contrasena === 'rivas') {
+        if (values.carne = 'admin' && values.contrasena === '   ') {
             login();
         } else {
             message.error('Usuario/Contraseña incorrecto !')
