@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { AuthContextProvider } from './context/AuthContext'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { PRIVATE, PUBLIC } from './router/path'
-import { Home, Login } from './page'
+import { CURSOS, PRIVATE, PUBLIC } from './router/path'
+import { Cursos, Home, Login } from './page'
 import { PublicRoute } from './router/PublicRoute'
 import { PrivateRoute } from './router/PrivateRoute'
 
@@ -20,6 +20,7 @@ function App() {
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
             <Route index element={<Home />} />
+            <Route path={CURSOS} element={<Cursos />} />
           </Route>
         </Routes>
 

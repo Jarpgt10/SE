@@ -8,7 +8,7 @@ export const PublicRoute = () => {
 
 
   const { isAuthenticated } = useAuthContext();
-  console.log(isAuthenticated);
+
   // no esta autenticado?
   if (isAuthenticated) {
     return <Navigate to={PRIVATE} />;
