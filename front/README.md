@@ -19,3 +19,5 @@ npm i react-router-dom
 # ant desing
 npm install antd
 
+# axios para la peticiones
+npm i axios
