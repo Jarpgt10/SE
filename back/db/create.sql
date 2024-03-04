@@ -11,4 +11,6 @@ CREATE TABLE [permiso_menu]
 CREATE TABLE [curso] 
 CREATE TABLE [asignacion]
 CREATE TABLE [detalle_asignacion]
+CREATE TABLE [carrera_universitaria]
+
 
