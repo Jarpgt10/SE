@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-
-/*
-Alejandro Rivas
-ROLES Y PERMISOS
-16-10-2023
-*/
-
-
-INSERT INTO usuario(nombre,usuario,contrasena,id_rol_usuario)
-VALUES('Admnistrador','Administrador','DondePanchito!',1),('Empleado','panchito','panchito',1);
-
-/*
-Alejandro Rivas
-ROLES Y PERMISOS
-16-10-2023
-*/
-
-INSERT INTO tipo_cantidad_producto(tipo_cantidad_producto,estado)
-VALUES ('LB',1),('KG',1),('UNIDADES',1),('LT',1),('BOLSAS',1),('CAJAS',1); 
-=======
 /* Alejandro Rivas
 2024-03-02
 */
@@ -71,4 +50,3 @@ INSERT INTO curso (id_carrera_universitaria, nombre) VALUES
 (5, 'Teoría de la Computación'),
 (5, 'Redes de Computadoras'),
 (5, 'Desarrollo de Software');
->>>>>>> devall
