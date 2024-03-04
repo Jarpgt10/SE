@@ -5,3 +5,7 @@ Se agrega campo para guardar contraseña xd
 */
 ALTER TABLE `se`.`usuario` 
 ADD COLUMN `contrasena` VARCHAR(10) NULL AFTER `carne`;
+
+
+ALTER TABLE `se`.`menu` 
+ADD COLUMN `icon` TEXT NULL AFTER `estado`;
