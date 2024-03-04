@@ -10,7 +10,7 @@ export default function SideBar() {
 
     return (
         <div
-            className={`bg-[#EBEBEB] h-screen w-16 flex flex-col justify-between  shadow-black   `}
+            className={`bg-[#EBEBEB] h-screen w-16 flex flex-col justify-between    `}
         >
 
         </div>
