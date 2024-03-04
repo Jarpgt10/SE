@@ -1,14 +1,2 @@
-create database SE
-
--- Alejandro Rivas
--- 4-03-2024
-
-
-CREATE TABLE [rol_usuario]
-CREATE TABLE [usuario] 
-CREATE TABLE [menu] 
-CREATE TABLE [permiso_menu] 
-CREATE TABLE [curso] 
-CREATE TABLE [asignacion]
-CREATE TABLE [detalle_asignacion]
-
+INSERT INTO tipo_cantidad_producto(tipo_cantidad_producto,estado)
+VALUES ('LB',1),('KG',1),('UNIDADES',1),('LT',1),('BOLSAS',1),('CAJAS',1); 
