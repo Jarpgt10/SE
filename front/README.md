@@ -21,3 +21,6 @@ npm install antd
 
 # axios para la peticiones
 npm i axios
+
+# icons 
+npm i react-icon
