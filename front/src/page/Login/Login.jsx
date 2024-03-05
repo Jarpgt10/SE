@@ -1,16 +1,29 @@
 import React, { useContext } from 'react'
 import { Button, Form, Input, message } from 'antd'
 import { AuthContext } from '../../context/AuthContext'
+import { encryptPassword } from '../../utilities/cryptoUtils'
+import { httpExistUser } from '../../services/user-services'
 
 export default function Login() {
     const { login } = useContext(AuthContext)
 
     const handleSubmit = (values) => {
-        if (values.carne = 'admin' && values.contrasena === '   ') {
-            login();
-        } else {
-            message.error('Usuario/Contraseña incorrecto !')
+        const data = {
+            ...values,
+            contrasena: encryptPassword(values.contrasena)
         }
+
+        httpExistUser(data).then((res) => {
+
+            if (res.length > 0 && res[0].estado === 1) {
+                login();
+            } else if (res.length > 0 && res[0].estado === 0) {
+                message.warning('Carne desactivado');
+            } else {
+                message.error('carne/contraseña incorrecta!');
+            }
+
+        });
     }
 
 

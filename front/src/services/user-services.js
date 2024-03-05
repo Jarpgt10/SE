@@ -5,3 +5,11 @@ export const httpGetUser = async () => {
   const result = await request(`${path}user`)
   return result
 }
+
+export const httpExistUser = async (body) => {
+  const result = await request(`${path}existuser`, {
+    method: 'POST',
+    body,
+  })
+  return result
+}

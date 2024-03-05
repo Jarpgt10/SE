@@ -24,3 +24,6 @@ npm i axios
 
 # icons 
 npm i react-icon
+
+# encriptacion
+crypto-js

@@ -14,7 +14,8 @@ export default function Layout({ children }) {
 
             <div className='default-container'>
                 <div className='text-3xl font-bold text-gray-600  justify-between flex'>
-                    <span>System-Student</span>
+                    <span>Sistema Estudiantes</span>
+                    <span>rol usuario</span>
                     <span className='cursor-pointer' onClick={() => handleLogaut()}><Icon.exit /></span>
                 </div>
                 {children}

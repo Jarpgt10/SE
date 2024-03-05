@@ -37,7 +37,7 @@ export default function Cursos() {
             </div>
             <div className='mx-[5%]'>
                 <div className='mt-[2%]  '>
-                    <Form layout='vertical' className='flex gap-5' onValuesChange={(changedValues) => {
+                    <Form layout='vertical' className='flex gap-5' onValuesCha nge={(changedValues) => {
                         if ('carreras_universitarias' in changedValues) {
                             setCarrerasFilter(changedValues.carreras_universitarias);
                         }
