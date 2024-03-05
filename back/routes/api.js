@@ -10,6 +10,7 @@ const cursosController = require('../controllers/cursosControllers/CursoControll
 // router.post('/DeletedTask', taksController.DeletedTask)
 
 router.get('/user', userController.getUser)
+router.post('/existuser', userController.getExistUser)
 router.get('/cursos', cursosController.getCursos)
 
 module.exports = router

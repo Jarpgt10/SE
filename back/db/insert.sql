@@ -50,3 +50,11 @@ INSERT INTO curso (id_carrera_universitaria, nombre) VALUES
 (5, 'Teoría de la Computación'),
 (5, 'Redes de Computadoras'),
 (5, 'Desarrollo de Software');
+
+INSERT INTO `se`.`rol_usuario` (`nombre`) VALUES ('catedratico');
+
+INSERT INTO `se`.`usuario` (`primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `id_rol_usuario`)
+VALUES ('Generico', 'Usuario', 'martines', 'martines', 'prueba@gmail.com', '2');
+
+
+INSERT INTO `se`.`asignacion` (`id_usuario_catedratico`, `id_usuario_estudiante`, `id_curso`) VALUES ('2', '1', '1');

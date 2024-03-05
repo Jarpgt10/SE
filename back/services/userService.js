@@ -1,11 +1,34 @@
 const databaseConfig = require('../config/database')
 const mysql = require('mysql')
-const bcrypt = require('bcrypt')
 
 const connection = require('../controllers/database/database')
 
 exports.connectToDatabase = () => {
   console.log('Conexión establecida con la base de datos')
+}
+
+exports.get_exist_user = (user, callback) => {
+  const selectQuery =
+    'SELECT * FROM usuario WHERE carne = ? AND contrasena = ? '
+
+  connection.query(
+    selectQuery,
+    [user.carne, user.contrasena],
+    (error, results, fields) => {
+      results = results.map((data) => ({
+        ...data,
+        estado: data.estado.readUInt8(0),
+      }))
+
+      if (error) {
+        console.error('Error executing query:', error)
+
+        callback(error, null)
+      } else {
+        callback(null, results)
+      }
+    },
+  )
 }
 
 exports.get_user = (callback) => {

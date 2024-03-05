@@ -10,4 +10,16 @@ const getUser = (req, res) => {
   })
 }
 
-module.exports = { getUser }
+const getExistUser = (req, res) => {
+  const user = req.body
+  // console.log(user)
+  databaseService.get_exist_user(user, (error, result) => {
+    if (error) {
+      res.json({ err: true })
+    } else {
+      res.json(result)
+    }
+  })
+}
+
+module.exports = { getUser, getExistUser }
