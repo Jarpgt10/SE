@@ -58,3 +58,12 @@ VALUES ('Generico', 'Usuario', 'martines', 'martines', 'prueba@gmail.com', '2');
 
 
 INSERT INTO `se`.`asignacion` (`id_usuario_catedratico`, `id_usuario_estudiante`, `id_curso`) VALUES ('2', '1', '1');
+
+
+/* Alejandro Rivas
+2024-03-08
+*/
+
+INSERT INTO  menu(nombre_menu) VALUES ('USUARIOS');
+
+INSERT INTO `se`.`permiso_menu` (`id_menu`, `id_usuario`) VALUES ('3', '1');

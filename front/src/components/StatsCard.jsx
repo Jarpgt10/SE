@@ -9,7 +9,7 @@ const StatsCard = ({ title, value, icon, }) => {
                 <div>{icon ? icon : title}</div>
                 <div><Icon.points /></div>
             </div>
-            <div className="justify-center flex mt-[10%]">
+            <div className="justify-center flex mt-[1%]">
                 <span className="text-xl font-bold">{value}</span>
             </div>
         </div>

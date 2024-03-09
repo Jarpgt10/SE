@@ -1,5 +1,5 @@
 import Icon from "../utilities/Icon";
-import { HOME, CURSOS } from "../router/path";
+import { HOME, CURSOS, USUARIOS } from "../router/path";
 
 const Menu = [
     {
@@ -13,7 +13,15 @@ const Menu = [
         name: 'CURSOS',
         icon: <Icon.teacher size={30} />,
         url: CURSOS
+    },
+    {
+        id_menu: 3,
+        name: 'USUARIOS',
+        icon: <Icon.user size={30} />,
+        url: USUARIOS
     }
+
+
 ]
 
 export default Menu
