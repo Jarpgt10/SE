@@ -14,7 +14,7 @@ export default function OptionsCard({ data }) {
         <>
             <div className='relative text-center' onClick={() => handleClick(data)}>
                 <img src={Card} loading='lazy' className='w-[90%] mx-auto cursor-pointer' alt='opciones usuario' />
-                <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-bold text-xl '>{data.nombre}</p>
+                <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black font-bold text-xl z-50 '>{data.nombre}</p>
             </div>
 
             <Modal
