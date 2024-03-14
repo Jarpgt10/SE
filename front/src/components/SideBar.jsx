@@ -19,7 +19,6 @@ export default function SideBar() {
         httpGetUser().then((res) => setSession(res));
     }, [])
 
-
     return (
         <div
             className={`bg-[#F5F5F5] h-screen w-20 flex `}
@@ -39,11 +38,12 @@ export default function SideBar() {
                                 {data.usuario}
                             </div>
                         </div>
+
                         {data.permisos.map(permiso => (
                             <div className="hover:border-l-4 hover:border-black">
                                 <Link to={Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.url || '/'} key={permiso.id_menu} className="flex justify-center cursor-pointer py-5 text-[#0997D9] relative">
                                     <span className="hover-trigger flex justify-center items-center hover:text-black  ">
-                                        <span className="absolute left-[80%] text-xl">
+                                        <span className="absolute left-[80%] text-xl z-50">
                                             <Tag color="#2db7f5" className="h-8 w-20 pt-1">{permiso.nombre_menu}</Tag>
                                         </span>
                                         {Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.icon || permiso.nombre_menu}
