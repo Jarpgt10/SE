@@ -4,6 +4,7 @@ import avatar from '../assets/avatar.webp';
 import umg from '../assets/umg.webp';
 import Menu from "./Menu";
 import { Link } from 'react-router-dom'
+import { Tag } from "antd";
 
 export default function SideBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ export default function SideBar() {
     useEffect(() => {
         httpGetUser().then((res) => setSession(res));
     }, [])
+
 
     return (
         <div
@@ -38,9 +40,16 @@ export default function SideBar() {
                             </div>
                         </div>
                         {data.permisos.map(permiso => (
-                            <Link to={Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.url || '/'} key={permiso.id_menu} className="flex justify-center cursor-pointer py-5 hover:text-black hover:border-l-4 hover:border-black text-[#0997D9]">
-                                {Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.icon || permiso.nombre_menu}
-                            </Link>
+                            <div className="hover:border-l-4 hover:border-black">
+                                <Link to={Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.url || '/'} key={permiso.id_menu} className="flex justify-center cursor-pointer py-5 text-[#0997D9] relative">
+                                    <span className="hover-trigger flex justify-center items-center hover:text-black  ">
+                                        <span className="absolute left-[80%] text-xl">
+                                            <Tag color="#2db7f5" className="h-8 w-20 pt-1">{permiso.nombre_menu}</Tag>
+                                        </span>
+                                        {Menu.find(menuItem => menuItem.id_menu === permiso.id_menu)?.icon || permiso.nombre_menu}
+                                    </span>
+                                </Link>
+                            </div>
                         ))}
 
                     </div>

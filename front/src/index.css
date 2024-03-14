@@ -14,4 +14,13 @@
 }
 
 
-/*---------------------- SIDEBAR----------------*/
+
+
+
+.hover-trigger>span {
+    display: none;
+}
+
+.hover-trigger:hover>span {
+    display: inline-block;
+}

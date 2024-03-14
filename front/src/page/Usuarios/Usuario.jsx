@@ -8,13 +8,9 @@ export default function Usuario() {
     return (
         <>
             <Layout>
-
-
                 <div className='my-[1%] text-lg font-bold'>
                     USUARIOS
                 </div>
-
-
                 <div className='flex justify-start items-center '>
                     {OpcionesUsuario.map((opt, index) => (
                         <div>
@@ -22,8 +18,6 @@ export default function Usuario() {
                         </div>
                     ))}
                 </div>
-
-
             </Layout>
 
         </>

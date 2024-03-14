@@ -13,8 +13,6 @@ function App() {
   return (
     <AuthContextProvider>
       <BrowserRouter>
-
-
         <Routes >
           <Route path={PUBLIC} element={<PublicRoute />}>
             <Route index element={<Login />} />

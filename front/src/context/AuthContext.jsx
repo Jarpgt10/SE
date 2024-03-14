@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = (props) => {
     const [isAuthenticated, setIsAutenticated] = useState(
         window.localStorage.getItem(MY_AUTH_APP) ?? false
+
     );
 
     const login = useCallback(function () {
@@ -27,6 +28,7 @@ export const AuthContextProvider = (props) => {
         }),
         [login, logout, isAuthenticated]
     );
+
 
     return (
         <AuthContext.Provider value={value}>

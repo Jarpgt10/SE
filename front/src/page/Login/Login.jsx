@@ -14,7 +14,6 @@ export default function Login() {
         }
 
         httpExistUser(data).then((res) => {
-
             if (res.length > 0 && res[0].estado === 1) {
                 login();
             } else if (res.length > 0 && res[0].estado === 0) {
