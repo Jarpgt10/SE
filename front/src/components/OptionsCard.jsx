@@ -22,7 +22,7 @@ export default function OptionsCard({ data }) {
                 open={open}
                 footer={null}
                 centered
-                width={800}
+                width={data.id === 1 ? 700 : data.id === 2 ? 1000 : 800}
                 title={<span className='flex justify-center text-2xl'> {data.nombre}</span>}
             >
 
