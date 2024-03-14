@@ -22,4 +22,14 @@ const getExistUser = (req, res) => {
   })
 }
 
-module.exports = { getUser, getExistUser }
+const getRoles = (req, res) => {
+  databaseService.get_roles((error, result) => {
+    if (error) {
+      res.json({ err: true })
+    } else {
+      res.json(result)
+    }
+  })
+}
+
+module.exports = { getUser, getExistUser, getRoles }

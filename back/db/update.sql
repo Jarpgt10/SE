@@ -15,3 +15,12 @@ Alejandro Rivas
 se agrego contraseña encriptada para el usuario de it
 */
 UPDATE `se`.`usuario` SET `contrasena` = 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6' WHERE (`id_usuario` = '1');
+
+
+/*
+Alejandro Rivas
+2024-03-13
+*/
+
+UPDATE `se`.`rol_usuario` SET `nombre` = 'Catedratico' WHERE (`id_rol_usuario` = '2');
+UPDATE `se`.`rol_usuario` SET `nombre` = 'Alumno' WHERE (`id_rol_usuario` = '3');

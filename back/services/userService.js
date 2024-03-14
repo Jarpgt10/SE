@@ -72,3 +72,19 @@ exports.get_user = (callback) => {
     })
   })
 }
+
+exports.get_roles = (callback) => {
+  const query =
+    'SELECT * FROM rol_usuario where estado = 1 and id_rol_usuario != 1;'
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error al obtener las ordenes:', error)
+      callback(error, null)
+      return
+    }
+
+    const typeProduct = results
+    callback(null, typeProduct)
+  })
+}

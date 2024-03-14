@@ -1,16 +1,13 @@
 const express = require('express')
 const router = express.Router()
-// const taksController = require('../controllers/stateControllers/taskController')
 const userController = require('../controllers/user/userController')
 const cursosController = require('../controllers/cursosControllers/CursoController')
-
-// router.get('/states', taksController.getStates)
-// router.get('/taks', taksController.getTask)
-// router.post('/addOrUpdateTask', taksController.addOrUpdateTask)
-// router.post('/DeletedTask', taksController.DeletedTask)
+const carrerasController = require('../controllers/carrerasControllers/CarreraController')
 
 router.get('/user', userController.getUser)
 router.post('/existuser', userController.getExistUser)
 router.get('/cursos', cursosController.getCursos)
+router.get('/carrera', carrerasController.getCarrera)
+router.get('/roles', userController.getRoles)
 
 module.exports = router

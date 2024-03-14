@@ -67,3 +67,5 @@ INSERT INTO `se`.`asignacion` (`id_usuario_catedratico`, `id_usuario_estudiante`
 INSERT INTO  menu(nombre_menu) VALUES ('USUARIOS');
 
 INSERT INTO `se`.`permiso_menu` (`id_menu`, `id_usuario`) VALUES ('3', '1');
+
+INSERT INTO `se`.`rol_usuario` (`id_rol_usuario`, `nombre`, `estado`) VALUES ('3', 'alumno', b'1');
