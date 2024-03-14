@@ -13,3 +13,8 @@ export const httpExistUser = async (body) => {
   })
   return result
 }
+
+export const hhtpGetRoles = async () => {
+  const result = await request(`${path}roles`)
+  return result
+}

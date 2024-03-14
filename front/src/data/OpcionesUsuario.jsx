@@ -7,8 +7,8 @@ const OpcionesUsuario = [
         id_rol_usuario: 1
     },
     {
-        id: 1,
-        nombre: 'informacion',
+        id: 2,
+        nombre: 'Informacion',
         id_rol_usuario: 1
     }
 ]
