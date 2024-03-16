@@ -14,8 +14,9 @@ export default function Login() {
         }
 
         httpExistUser(data).then((res) => {
+
             if (res.length > 0 && res[0].estado === 1) {
-                login();
+                login(res[0].id_usuario);
             } else if (res.length > 0 && res[0].estado === 0) {
                 message.warning('Carne desactivado');
             } else {

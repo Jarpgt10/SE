@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { httpGetUser } from "../services/user-services";
+import React, { useContext, useEffect, useState } from "react";
 import avatar from '../assets/avatar.webp';
 import umg from '../assets/umg.webp';
 import Menu from "./Menu";
 import { Link } from 'react-router-dom'
 import { Tag } from "antd";
 
+import { LoginContext } from "../context/LoginContext";
+
 export default function SideBar() {
-    const [isOpen, setIsOpen] = useState(false);
+    const { session } = useContext(LoginContext);
 
-    const toggleSidebar = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const [session, setSession] = useState([]);
-
-    useEffect(() => {
-        httpGetUser().then((res) => setSession(res));
-    }, [])
 
     return (
         <div
@@ -34,7 +26,7 @@ export default function SideBar() {
                             <div className="flex justify-center">
                                 <img src={avatar} className="w-[50%] my-2"></img>
                             </div>
-                            <div className="justify-center flex text-lg font-black">
+                            <div className="justify-center flex  font-black">
                                 {data.usuario}
                             </div>
                         </div>
