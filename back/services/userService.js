@@ -88,3 +88,63 @@ exports.get_roles = (callback) => {
     callback(null, typeProduct)
   })
 }
+
+exports.get_user_by_id = (user, callback) => {
+  const selectUserQuery = `SELECT a.usuario, 
+                            A.primer_nombre, 
+                            A.segundo_nombre, 
+                            A.primer_apellido, 
+                            A.segundo_apellido,
+                            A.correo, 
+                            A.carne, 
+                            A.url_image,
+                            b.nombre FROM usuario A
+                            INNER JOIN rol_usuario B on a.id_rol_usuario = b.id_rol_usuario
+                            WHERE a.id_usuario = ? AND a.estado = 1`
+  const selectPermissionsQuery = `SELECT c.id_menu, d.nombre_menu FROM usuario A
+                                  INNER JOIN permiso_menu C ON A.id_usuario = C.id_usuario
+                                  INNER JOIN menu D ON D.id_menu = C.id_menu
+                                  WHERE A.id_usuario = ?`
+
+  connection.query(selectUserQuery, [user.id_usuario], (error, userResults) => {
+    if (error) {
+      console.error('Error al obtener la información del usuario:', error)
+      callback(error, null)
+      return
+    }
+
+    connection.query(
+      selectPermissionsQuery,
+      [user.id_usuario],
+      (error, permissionsResults) => {
+        if (error) {
+          console.error('Error al obtener los permisos:', error)
+          callback(error, null)
+          return
+        }
+
+        const transformedResults = userResults.map((user) => {
+          return {
+            usuario: user.usuario,
+            primer_nombre: user.primer_nombre,
+            segundo_nombre: user.segundo_nombre,
+            primer_apellido: user.primer_apellido,
+            segundo_apellido: user.segundo_apellido,
+            correo: user.correo,
+            estado: user.estado,
+            carne: user.carne,
+            url_image: user.url_image,
+            nombre_rol: user.nombre,
+            // estado: user.estado.readUInt8(0), // Supongo que estado es un buffer
+            permisos: permissionsResults.map((permission) => ({
+              id_menu: permission.id_menu,
+              nombre_menu: permission.nombre_menu,
+            })),
+          }
+        })
+
+        callback(null, transformedResults)
+      },
+    )
+  })
+}

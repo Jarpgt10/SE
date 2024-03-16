@@ -13,3 +13,15 @@ ADD COLUMN `icon` TEXT NULL AFTER `estado`;
 
 ALTER TABLE `se`.`usuario` 
 CHANGE COLUMN `contrasena` `contrasena` VARCHAR(100) NULL DEFAULT NULL ;
+
+/*
+Alejandro Rivas
+15-03-2024
+*/
+ALTER TABLE `se`.`usuario` 
+ADD COLUMN `url_image` VARCHAR(100) NULL AFTER `contrasena`;
+
+
+
+
+
