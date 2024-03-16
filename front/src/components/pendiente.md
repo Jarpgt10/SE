@@ -4,11 +4,11 @@
 
  
  [Layout]
- 1. -> [] obtener data session/usuario y mostrar rol 
+ 1. -> [x] obtener data session/usuario y mostrar rol 
  
  
  [SideBar] 
- 1. -> [] Cuando cambia el nombre del usuario crece la badground dejarlo en un tamaño fijo y reducir al tamaña de letra  maybe 
+ 1. -> [x] Cuando cambia el nombre del usuario crece la badground dejarlo en un tamaño fijo y reducir al tamaña de letra  maybe 
  2. -> [x] Cuando se hace el hover en el icono (Home) queda debajo del la tarjeta de crear del componente de [Usuarios.jsx]; 
 
 
