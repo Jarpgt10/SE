@@ -21,39 +21,39 @@ export default function Crear() {
     }
 
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
+    // const handleImageChange = (e) => {
+    //     const file = e.target.files[0];
 
-        setNameImage(file.name);
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                setImage(e.target.result);
-                setNameImage(e.target.name);
-            };
-            reader.readAsDataURL(file);
-        }
-    };
+    //     setNameImage(file.name);
+    //     if (file) {
+    //         const reader = new FileReader();
+    //         reader.onload = (e) => {
+    //             setImage(e.target.result);
+    //             setNameImage(e.target.name);
+    //         };
+    //         reader.readAsDataURL(file);
+    //     }
+    // };
 
-    const handleReset = () => {
-        setImage(Default);
-        setNameImage(null);
-    };
+    // const handleReset = () => {
+    //     setImage(Default);
+    //     // setNameImage(null);
+    // };
 
-    const memoizedImage = useMemo(() => image, [image]);
+    // const memoizedImage = useMemo(() => image, [image]);
 
     return (
         <>
 
             <Form layout='vertical' onFinish={handleSubmit} className='w-full'>
-                <div className='justify-center flex'>
+                {/* <div className='justify-center flex'>
                     <img src={memoizedImage} className='w-[20%] rounded-full' />
                     <div className=' mx-[10%] justify-center flex items-center'>
                         <Form.Item name='url_image'>
                             <input type="file" onChange={handleImageChange} />
                         </Form.Item>
                     </div>
-                </div>
+                </div> */}
                 <div className='flex-wrap flex gap-5' >
                     <Form.Item
                         name='id_carrera_universitara'
@@ -115,7 +115,7 @@ export default function Crear() {
                 </div>
 
                 <div className='justify-end flex gap-5'>
-                    <Button className='bg-red-700 text-white' htmlType='reset' onClick={handleReset}>Limpiar</Button>
+                    <Button className='bg-red-700 text-white' htmlType='reset'>Limpiar</Button>
                     <Button htmlType='submit'>Crear</Button>
                 </div>
             </Form>
