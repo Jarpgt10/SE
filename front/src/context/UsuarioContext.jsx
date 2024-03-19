@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createContext } from "react";
 import { httpGetCarreras } from "../services/carreras.services";
-import { hhtpGetRoles, httpGetUser } from "../services/user-services";
+import { hhtpGetRoles } from "../services/user-services";
 
 
 export const UsuarioContext = createContext();

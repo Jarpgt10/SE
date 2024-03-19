@@ -27,3 +27,6 @@ npm i react-icon
 
 # encriptacion
 crypto-js
+
+# para envio de correos
+npm install resend

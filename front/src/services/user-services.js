@@ -39,12 +39,23 @@ export const httpGetUserById = async (body) => {
 }
 
 export const httpAddNewUser = async (body) => {
-  const result = await request(`${path}addNewUser`, {
+  const result = await request(`${path}newuser`, {
     method: 'POST',
     body,
   })
   return result
 }
+
+
+export const httpGetUserByCarne = async (body) => {
+  const result = await request(`${path}get_user_by_carne`, {
+    method: 'POST',
+    body,
+  })
+  return result
+}
+
+
 
 // export const httpSaveImg = async (image) => {
 //   try {

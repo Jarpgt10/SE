@@ -3,22 +3,43 @@ import React, { useContext, useState, useMemo } from 'react'
 import { UsuarioContext } from '../../context/UsuarioContext';
 import LoadImage from '../../components/LoadImage';
 import Default from '../../../public/default.webp';
-import { httpAddNewUser, httpSaveImg } from '../../services/user-services';
+import { httpAddNewUser } from '../../services/user-services';
+import { genericPassword } from '../../utilities/genericPassword';
+
+import { useEffect } from 'react';
+import { encryptPassword } from '../../utilities/cryptoUtils';
 
 export default function Crear() {
 
     const [image, setImage] = useState(Default);
     const [nameImage, setNameImage] = useState(null);
+    const [genericPass, setGenericPass] = useState();
     const { carreras, roles } = useContext(UsuarioContext);
+    const [carne, setcarne] = useState([]);
+    const [view, setView] = useState(false);
+
+    useEffect(() => {
+
+    }, [])
 
     const handleSubmit = (values) => {
+        const tempPass = genericPassword();
+        setGenericPass(tempPass);
+
         const data = {
             ...values,
+            contrasena: encryptPassword(tempPass)
             // name: nameImage
         }
-        httpAddNewUser(data);
+        httpAddNewUser(data).then((res) => setcarne(res));
+        setView(true);
+
+
 
     }
+
+
+
 
 
     // const handleImageChange = (e) => {
@@ -42,15 +63,27 @@ export default function Crear() {
 
     // const memoizedImage = useMemo(() => image, [image]);
 
+
     return (
         <>
+            {view ? (<div className='justify-center flex text-3xl gap-6'>
 
-            <Form layout='vertical' onFinish={handleSubmit} className='w-full'>
+                <span className='text-[#0997D9]'>
+                    Carne:
+                </span>
+                <span >{carne.length > 0 && carne[0].carne}</span>
+
+                <span className='text-[#0997D9]'>
+                    Contraseña :
+                </span>
+                <span > {genericPass}</span>
+
+            </div>) : (<Form layout='vertical' onFinish={handleSubmit} className='w-full'>
                 {/* <div className='justify-center flex'>
                     <img src={memoizedImage} className='w-[20%] rounded-full' />
                     <div className=' mx-[10%] justify-center flex items-center'>
                         <Form.Item name='url_image'>
-                            <input type="file" onChange={handleImageChange} />
+                        <input type="file" onChange={handleImageChange} />
                         </Form.Item>
                     </div>
                 </div> */}
@@ -118,7 +151,8 @@ export default function Crear() {
                     <Button className='bg-red-700 text-white' htmlType='reset'>Limpiar</Button>
                     <Button htmlType='submit'>Crear</Button>
                 </div>
-            </Form>
+            </Form>)}
+
         </>
     )
 }
